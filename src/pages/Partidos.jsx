@@ -3,11 +3,11 @@ import { Button, Card, Col, Form, InputGroup, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import apiDeputados from './../services/apiDeputados'
 import {FaSearch} from 'react-icons/fa';
+import { getPartidoid } from '../services/pesquisaService'
 
 const Partidos = () => {
 
     const [partidos, setPartidos] = useState([])
-    const [query, setQuery] = useState('')
 
     useEffect(() => {
         apiDeputados.get('partidos?itens=25').then(resultado => {
@@ -15,17 +15,9 @@ const Partidos = () => {
         })        
     }, [])
 
-
-    function pesquisar (event) {
-        setQuery(event.data)
+    const pesquisarPartidos = async (event) => {
+        getPartidoid(event.target.value).then(response => setPartidos(response))
     }
-      function pesquisarBotao (event) {
-        apiDeputados.get('partidos?sigla=' + query + '&itens=25').then(resultado => {
-          setPartidos(resultado.data.dados)
-        })
-      }
-
-
 
   return (
     <div style={{ margin: "8vh 0" }}>
@@ -34,10 +26,10 @@ const Partidos = () => {
             placeholder="Digite a sigla do partido desejado..."
             aria-label="Digite a sigla do partido desejado..."
             aria-describedby="basic-addon2"
-            onChange={pesquisar}
+            onChange={pesquisarPartidos}
             />
-            <Button onClick={pesquisarBotao} variant="success" id="button-addon2">
-            Pesquisar <FaSearch/>
+            <Button variant="success" id="button-addon2">
+            <FaSearch/>
             </Button>
         </InputGroup>
 

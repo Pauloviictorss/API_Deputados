@@ -3,12 +3,12 @@ import { Card, Col, Row, Button, InputGroup, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import apiDeputados from './../services/apiDeputados'
 import {FaSearch} from 'react-icons/fa';
+import { getDeputadoid } from '../services/pesquisaService'
 
 
 const Deputados = () => {
 
     const [deputados, setDeputados] = useState([])
-    const [query, setQuery] = useState('')
 
     useEffect(() => {
         apiDeputados.get('deputados/').then(resultado => {
@@ -16,27 +16,21 @@ const Deputados = () => {
         })
     }, [])
 
-
-    function pesquisar (event) {
-        setQuery(event.data)
+    const pesquisarDeputados = async (event) => {
+        getDeputadoid(event.target.value).then(response => setDeputados(response))
     }
-      function pesquisarBotao (event) {
-        apiDeputados.get('deputados?nome=' + query).then(resultado => {
-          setDeputados(resultado.data.dados)
-        })
-      }
 
   return (
     <div style={{ margin: "8vh 0" }}>
         <InputGroup className="my-4">
             <Form.Control
-            placeholder="Digite a sigla do partido desejado..."
-            aria-label="Digite a sigla do partido desejado..."
+            placeholder="Digite a sigla do deputado desejado..."
+            aria-label="Digite a sigla do deputado desejado..."
             aria-describedby="basic-addon2"
-            onChange={pesquisar}
+            onChange={pesquisarDeputados}
             />
-            <Button onClick={pesquisarBotao} variant="success" id="button-addon2">
-            Pesquisar <FaSearch/>
+            <Button variant="success" id="button-addon2">
+            <FaSearch/>
             </Button>
         </InputGroup>
 
