@@ -26,10 +26,8 @@ const Deputados = () => {
         })
       }
 
-
-
   return (
-    <div style={{ margin: "120px 0" }}>
+    <div style={{ margin: "8vh 0" }}>
         <InputGroup className="my-4">
             <Form.Control
             placeholder="Digite a sigla do partido desejado..."
@@ -37,7 +35,7 @@ const Deputados = () => {
             aria-describedby="basic-addon2"
             onChange={pesquisar}
             />
-            <Button onClick={pesquisarBotao} variant="warning" id="button-addon2">
+            <Button onClick={pesquisarBotao} variant="success" id="button-addon2">
             Pesquisar <FaSearch/>
             </Button>
         </InputGroup>
@@ -47,7 +45,6 @@ const Deputados = () => {
         </Card>
 
         { !deputados.length && <h1>Carregando...</h1>}
-
             <Row xs={1} md={2} xl={3} className="g-5">
             {deputados.map(item => (
                 <Col key={item.id}>
@@ -56,13 +53,10 @@ const Deputados = () => {
 
                         <Card.Img variant="top" src={item.urlFoto}/>
                     </Card>
-                    <Link className="btn btn-warning w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
+                    <Link className="btn btn-success w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
                 </Col>
             ))}
             </Row>
-            <Card style={{border: 'none', marginTop: '10px'}}>
-                <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-            </Card>
     </div>
   )
 }

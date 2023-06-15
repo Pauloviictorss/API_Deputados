@@ -24,7 +24,7 @@ const DeputadoInfo = () => {
 
   return (
     
-    <div style={{ marginTop: "90px" }}>
+    <div style={{ margin: "8vh 0" }}>
         {!deputado.id && <h1>Carregando...</h1>}
 
         {deputado.id &&
@@ -72,17 +72,13 @@ const DeputadoInfo = () => {
                                     <ul>
                                         <li>{item.descricao}</li>
                                         <li><strong>Local:</strong> {item.localCamara.nome}</li>
-                                        <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={'/detalhesevento/' + item.id }> Ver detalhes </Link>
+                                        <Link style={{margin: '0 auto'}} className='btn btn-success ' to={'/detalhesevento/' + item.id }> Ver detalhes </Link>
                                     </ul>
                                 </ul>
                             </Col>
                         ))}
                     </Card>
                 </Row>
-                
-                <Card style={{border: 'none', margin: '20px 0 50px 0'}}>
-                    <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-                </Card>
             </div>
         }  
     </div>

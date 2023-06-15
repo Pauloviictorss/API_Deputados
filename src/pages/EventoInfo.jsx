@@ -64,7 +64,7 @@ const EventoInfo = () => {
                 </Card>
                 
                 <Card className='px-3 pt-2 mb-1'>
-                    {!evento.urlRegistro && <h3 style={{margin: '20px 0'}}>Não há informações sobre os participantes desse evento.</h3>}
+                    
                     {evento.dataHoraInicio && evento.dataHoraFim &&
                     <Card style={{border:'none'}}>
                         <h3>Deputados participantes</h3>
@@ -75,7 +75,7 @@ const EventoInfo = () => {
                                         <h3 style={{margin: '10px'}}>{item.nome}</h3>
                                         <Card.Img variant="top" src={item.urlFoto}/>
                                     </Card>
-                                    <Link className="btn btn-warning w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
+                                    <Link className="btn btn-success w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
                                 </Col>
                             ))}
                         </Row>
@@ -95,10 +95,6 @@ const EventoInfo = () => {
                     <iframe width="560" height="315" src={evento.urlRegistro.slice(0, 24) + 'embed/' + evento.urlRegistro.slice(32)} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture;"></iframe>
                     </div>
                     }
-                </Card>
-            
-                <Card style={{border: 'none', marginTop: '10px'}}>
-                    <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
                 </Card>
             </div>
             

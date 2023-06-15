@@ -28,7 +28,7 @@ const Partidos = () => {
 
 
   return (
-    <div style={{ margin: "120px 0" }}>
+    <div style={{ margin: "8vh 0" }}>
         <InputGroup className="my-4">
             <Form.Control
             placeholder="Digite a sigla do partido desejado..."
@@ -36,7 +36,7 @@ const Partidos = () => {
             aria-describedby="basic-addon2"
             onChange={pesquisar}
             />
-            <Button onClick={pesquisarBotao} variant="warning" id="button-addon2">
+            <Button onClick={pesquisarBotao} variant="success" id="button-addon2">
             Pesquisar <FaSearch/>
             </Button>
         </InputGroup>
@@ -54,15 +54,12 @@ const Partidos = () => {
                         <Card.Body style={{textAlign: 'center'}}>
                             <h3>{item.sigla}</h3>
                             <p>{item.nome}</p>
-                            <Link className="btn btn-warning w-100" to={'/detalhespartido/' + item.id}>Ver Detalhes</Link>
+                            <Link className="btn btn-success w-100" to={'/detalhespartido/' + item.id}>Ver Detalhes</Link>
                         </Card.Body>
                     </Card>
                 </Col>
             ))}
             </Row>
-            <Card style={{border: 'none', marginTop: '10px'}}>
-                <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-            </Card>
     </div>
   )
 }

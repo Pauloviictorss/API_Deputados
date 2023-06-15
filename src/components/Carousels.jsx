@@ -6,7 +6,7 @@ function UncontrolledExample() {
     <Carousel style={{ marginBottom: "2vh" }}>
       <Carousel.Item>
         <img
-          style={{height: '20vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
+          style={{height: '25vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
           className="d-block w-100"
           src={bg}
           alt=''
@@ -18,7 +18,7 @@ function UncontrolledExample() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{height: '20vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
+          style={{height: '25vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
           className="d-block w-100"
           src={bg}
           alt=''
@@ -31,7 +31,7 @@ function UncontrolledExample() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          style={{height: '20vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
+          style={{height: '25vh', width: '100vw', borderRadius: '0 0 8px 8px'}}
           className="d-block w-100"
           src={bg}
           alt=''

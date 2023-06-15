@@ -24,7 +24,7 @@ const ProposicaoInfo = () => {
   return (
 
     
-    <div style={{ margin: "120px 0" }}>
+    <div style={{ margin: "8vh 0" }}>
         {!proposicao.id && <h1>Carregando...</h1>}
 
         {proposicao.id &&
@@ -51,20 +51,17 @@ const ProposicaoInfo = () => {
                                 {proposicoesRelacionadas.slice(0,4).map(item => (
                                     <Col>
                                         <Card className='bg-light my-2 p-2'>
-                                            <h5><Link className="btn btn-warning w-100" to={'/detalhesproposicao/' + item.id}>{item.siglaTipo} {item.numero}</Link></h5>
+                                            <h5><Link className="btn btn-success w-100" to={'/detalhesproposicao/' + item.id}>{item.siglaTipo} {item.numero}</Link></h5>
                                             <p><strong>Ano: </strong>{item.ano}</p>
                                             <p><strong>Ementa: </strong>{item.ementa.slice(0,50)}...</p>
                                         </Card>
                                     </Col>
                                 ))}
                                 </Row>
-                                <Link to={'/proposicoes?pagina=1&itens=10000&ordem=DESC&ordenarPor=ano'} className='btn btn-warning'>Ver mais</Link>
+                                <Link to={'/proposicoes?pagina=1&itens=10000&ordem=DESC&ordenarPor=ano'} className='btn btn-success'>Ver mais</Link>
                         </Card>
                     </Col>
                 </Row>      
-                <Card style={{border: 'none', marginTop: '10px'}}>
-                    <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-                </Card>
             </div>
             
         }  

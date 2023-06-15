@@ -14,7 +14,7 @@ const Proposicoes = () => {
     }, [])
 
   return (
-    <div style={{ margin: "120px 0" }}>
+    <div style={{ margin: "8vh 0" }}>
         <Card className='align-items-center p-2 mb-2'>
             <h1>Proposições na Câmara</h1>
         </Card>
@@ -30,13 +30,10 @@ const Proposicoes = () => {
                         <p>Ano: {item.ano}</p>
                         <p>{item.ementa.slice(0,70)}...</p>
                     </Card>
-                    <Link className="btn btn-warning w-100 mb-3" to={'/detalhesproposicao/' + item.id}>Ver Detalhes</Link>
+                    <Link className="btn btn-success w-100 mb-3" to={'/detalhesproposicao/' + item.id}>Ver Detalhes</Link>
                 </Col>
             ))}
         </Row>
-        <Card style={{border: 'none', marginTop: '10px'}}>
-            <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-        </Card>
     </div>
   )
 }

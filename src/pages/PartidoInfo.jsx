@@ -23,7 +23,7 @@ const PartidoInfo = () => {
   return (
 
     
-    <div style={{ margin: "120px 0" }}>
+    <div style={{ margin: "8vh 0" }}>
         {!partido.id && <h1>Carregando...</h1>}
 
         {partido.id &&
@@ -51,15 +51,10 @@ const PartidoInfo = () => {
                                 <h3 style={{margin: '10px'}}>{item.nome}</h3>
                                 <Card.Img variant="top" src={item.urlFoto}/>
                             </Card>
-                            <Link className="btn btn-warning w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
+                            <Link className="btn btn-success w-100 mb-3" to={'/detalhesdeputado/' + item.id}>Ver Detalhes</Link>
                         </Col>
                     ))}
                 </Row>
-               
-                           
-                <Card style={{border: 'none', marginTop: '10px'}}>
-                    <Link style={{margin: '0 auto'}} className='btn btn-warning ' to={-1 }> VOLTAR </Link>
-                </Card>
             </div>
             
         }  
